@@ -764,33 +764,32 @@
 <!-- Music Button -->  
 <audio id="bg-audio" src="music.mp3" loop="true" preload="auto" style="display:none;"></audio>
 
-<script>
-  (function() {
-    function startMusicEngine() {
-      const audio = document.getElementById('bg-audio');
-      if (audio) {
-        audio.muted = false; // Kill any mute defaults
-        audio.loop = true;   // Force it to repeat forever
-        audio.volume = 1.0;  // Full volume
-        
-        audio.play()
-          .then(() => {
-            console.log("Looping music started!");
-            // Remove listeners immediately so it doesn't try to restart on later clicks
-            window.removeEventListener('touchstart', startMusicEngine);
-            window.removeEventListener('click', startMusicEngine);
-          })
-          .catch((err) => {
-            console.log("Waiting for a clean screen touch:", err);
-          });
-      }
+  <script>
+function showPage(pageId) {
+    // 1. Instantly trigger the music loop on button click
+    const audio = document.getElementById('bg-audio');
+    if (audio) {
+        audio.muted = false;
+        audio.loop = true;
+        audio.volume = 1.0;
+        audio.play().catch(err => {
+            console.log("Audio playing seamlessly alongside page switch.");
+        });
     }
 
-    // Listens for the absolute first touch on mobile or desktop
-    window.addEventListener('touchstart', startMusicEngine, { passive: true });
-    window.addEventListener('click', startMusicEngine);
-  })();
-</script>
+    // 2. Hide all active pages cleanly
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+        page.classList.remove('active');
+    });
+
+    // 3. Reveal the target page seamlessly
+    const targetPage = document.getElementById(pageId);
+    if (targetPage) {
+        targetPage.classList.add('active');
+    }
+}
+  </script>
         
         
         
