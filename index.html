@@ -785,14 +785,9 @@
 </div>
 
 <!-- Music Button -->  
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🔊</button>  
-
-<!-- Audio element with uploaded music -->  
-<audio id="music" autoplay loop>
-  <source src="music.mp3"  type="audio/mpeg">
-  Your browser does not support the audio tag.
-</audio>  
-
+<audio id="bg-audio" src="music.mp3" loop preload="auto" style="display:none;"></audio>
+        
+        
 <script>  
     // Page navigation  
     function showPage(pageId) {  
