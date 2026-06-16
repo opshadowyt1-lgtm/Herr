@@ -1,0 +1,693 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Happy National Girlfriend Day 💗</title>  
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">  
+    <style>  
+        /* Reset and Base Styles */  
+        * {  
+            margin: 0;  
+            padding: 0;  
+            box-sizing: border-box;  
+        }  body {  
+        font-family: 'Comic Neue', cursive;  
+        background: #fdf2f8;  
+        min-height: 100vh;  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+        position: relative;  
+        overflow-x: hidden;  
+    }  
+
+    /* Scalloped borders */  
+    body::before, body::after {  
+        content: '';  
+        position: fixed;  
+        left: 0;  
+        right: 0;  
+        height: 20px;  
+        background-image: radial-gradient(circle at 10px 0, transparent 10px, #ff9db4 10px);  
+        background-size: 20px 20px;  
+        z-index: 10;  
+    }  
+
+    body::before {  
+        top: 0;  
+    }  
+
+    body::after {  
+        bottom: 0;  
+        transform: rotate(180deg);  
+    }  
+
+    /* Floating hearts animation */  
+    .floating-hearts {  
+        position: fixed;  
+        top: 0;  
+        left: 0;  
+        width: 100%;  
+        height: 100%;  
+        pointer-events: none;  
+        z-index: 1;  
+    }  
+
+    .heart {  
+        position: absolute;  
+        font-size: 20px;  
+        color: rgba(255, 182, 193, 0.7);  
+        animation: float 6s ease-in-out infinite;  
+    }  
+
+    /* Cute corner elements */  
+    .cute-element {  
+        position: fixed;  
+        font-size: 60px;  
+        z-index: 2;  
+        opacity: 0.8;  
+        pointer-events: none;  
+        filter: drop-shadow(0 4px 10px rgba(255, 192, 203, 0.7));  
+        transition: transform 0.5s ease;  
+    }  
+
+    .cute-element:hover {  
+        transform: scale(1.1) rotate(5deg);  
+    }  
+
+    .cute-tl {  
+        top: 30px;  
+        left: 30px;  
+        transform: rotate(-5deg);  
+    }  
+
+    .cute-tr {  
+        top: 30px;  
+        right: 30px;  
+        transform: rotate(5deg);  
+    }  
+
+    .cute-bl {  
+        bottom: 100px;  
+        left: 30px;  
+        transform: rotate(5deg);  
+    }  
+
+    .cute-br {  
+        bottom: 100px;  
+        right: 30px;  
+        transform: rotate(-5deg);  
+    }  
+
+    @keyframes float {  
+        0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }  
+        10% { opacity: 1; }  
+        90% { opacity: 1; }  
+        100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }  
+    }  
+      
+    /* Cartoonish animated clouds */  
+    .cloud {  
+        position: fixed;  
+        font-size: 50px;  
+        opacity: 0.8;  
+        z-index: 1;  
+        pointer-events: none;  
+        filter: drop-shadow(0 2px 6px rgba(255, 192, 203, 0.3));  
+    }  
+      
+    .cloud1 {  
+        top: 15%;  
+        left: -60px;  
+        animation: cloud-move-right 40s linear infinite;  
+    }  
+      
+    .cloud2 {  
+        top: 25%;  
+        right: -60px;  
+        animation: cloud-move-left 45s linear infinite;  
+        animation-delay: 8s;  
+    }  
+      
+    .cloud3 {  
+        top: 8%;  
+        right: -60px;  
+        animation: cloud-move-left 42s linear infinite;  
+        animation-delay: 20s;  
+    }  
+      
+    @keyframes cloud-move-right {  
+        from { transform: translateX(0); }  
+        to { transform: translateX(calc(100vw + 120px)); }  
+    }  
+      
+    @keyframes cloud-move-left {  
+        from { transform: translateX(0); }  
+        to { transform: translateX(calc(-100vw - 120px)); }  
+    }  
+
+    /* Floating cute elements */  
+    .floating-cute {  
+        position: fixed;  
+        font-size: 45px;  
+        z-index: 2;  
+        opacity: 0.8;  
+        pointer-events: none;  
+        animation: cute-float 5s ease-in-out infinite;  
+        filter: drop-shadow(0 3px 8px rgba(255, 182, 193, 0.6));  
+    }  
+
+    .float1 {  
+        top: 60%;  
+        left: 5%;  
+        animation-delay: 0s;  
+    }  
+
+    .float2 {  
+        top: 40%;  
+        right: 8%;  
+        animation-delay: 1.5s;  
+    }  
+
+    .float3 {  
+        bottom: 15%;  
+        left: 50%;  
+        transform: translateX(-50%);  
+        animation-delay: 3s;  
+    }  
+
+    @keyframes cute-float {  
+        0%, 100% { transform: translateY(0px) rotate(-2deg); }  
+        50% { transform: translateY(-10px) rotate(3deg); }  
+    }  
+
+    /* Neon pink glowing hearts */  
+    .neon-heart {  
+        position: fixed;  
+        font-size: 80px;  
+        color: #ff69b4;  
+        z-index: 1;  
+        pointer-events: none;  
+        text-shadow:   
+            0 0 10px #ff69b4,  
+            0 0 20px #ff1493,  
+            0 0 30px #ff1493,  
+            0 0 40px #ff1493;  
+        animation: neon-glow 3s ease-in-out infinite;  
+    }  
+
+    .neon-heart1 {  
+        top: 20%;  
+        left: 15%;  
+        animation-delay: 0s;  
+    }  
+
+    .neon-heart2 {  
+        top: 70%;  
+        right: 20%;  
+        animation-delay: 1s;  
+    }  
+
+    .neon-heart3 {  
+        top: 45%;  
+        left: 75%;  
+        animation-delay: 2s;  
+    }  
+
+    @keyframes neon-glow {  
+        0%, 100% {   
+            opacity: 0.3;  
+            transform: scale(0.9);  
+        }  
+        50% {   
+            opacity: 0.8;  
+            transform: scale(1.1);  
+        }  
+    }  
+
+    /* Page container */  
+    .page {  
+        display: none;  
+        width: 90%;  
+        max-width: 500px;  
+        text-align: center;  
+        z-index: 5;  
+        position: relative;  
+    }  
+
+    .page.active {  
+        display: block;  
+        animation: fadeIn 0.8s ease-in-out;  
+    }  
+
+    @keyframes fadeIn {  
+        from { opacity: 0; transform: translateY(20px); }  
+        to { opacity: 1; transform: translateY(0); }  
+    }  
+
+    /* Card styles */  
+    .card {  
+        background: white;  
+        border: 2px dotted #ff9db4;  
+        border-radius: 25px;  
+        padding: 30px;  
+        box-shadow: 0 15px 35px rgba(255, 157, 180, 0.3);  
+        position: relative;  
+        margin: 20px 0;  
+    }  
+      
+    /* Card corner flowers at the edges */  
+    .card > .corner-flower {  
+        font-size: 24px;  
+        position: absolute;  
+        z-index: 2;  
+    }  
+      
+    .card > .corner-flower:nth-child(1) {  
+        top: -12px;  
+        left: -12px;  
+    }  
+      
+    .card > .corner-flower:nth-child(2) {  
+        top: -12px;  
+        right: -12px;  
+    }  
+      
+    .card > .corner-flower:nth-child(3) {  
+        bottom: -12px;  
+        left: -12px;  
+    }  
+
+    /* Main title styles */  
+    .main-title {  
+        font-family: 'Poppins', sans-serif;  
+        font-size: 2.2rem;  
+        font-weight: 700;  
+        color: #ff69b4;  
+        text-shadow:   
+            3px 3px 0 white,  
+            -1px -1px 0 white,  
+            1px -1px 0 white,  
+            -1px 1px 0 white,  
+            1px 1px 0 white;  
+        margin: 20px 0;  
+        line-height: 1.2;  
+    }  
+
+    .date-text {  
+        font-size: 1.1rem;  
+        color: #333;  
+        margin: 15px 0;  
+        font-weight: 400;  
+    }  
+      
+    .author-text {  
+        font-size: 1.2rem;  
+        color: #ff69b4;  
+        font-weight: 600;  
+        margin-bottom: 10px;  
+        font-family: 'Comic Neue', cursive;  
+    }  
+
+    .cute-text {  
+        font-size: 1.1rem;  
+        color: #ff69b4;  
+        margin: 20px 0;  
+        font-weight: 400;  
+    }  
+
+    /* Image styles */  
+    .main-image {  
+        width: 200px;  
+        height: 200px;  
+        border-radius: 50%;  
+        border: 4px solid #ff9db4;  
+        margin: 0 auto 20px;  
+        display: block;  
+        object-fit: cover;  
+        box-shadow: 0 10px 25px rgba(255, 157, 180, 0.4);  
+        background: #ffe0eb;  
+    }  
+
+    .envelope-image, .bunny-image, .girlfriend-image {  
+        width: 150px;  
+        height: 150px;  
+        margin: 0 auto 20px;  
+        display: block;  
+        border-radius: 15px;  
+        background: #ffe0eb;  
+        object-fit: cover;  
+        border: 3px solid #ff9db4;  
+        box-shadow: 0 8px 20px rgba(255, 157, 180, 0.3);  
+    }  
+
+    /* Button styles */  
+    .kawaii-btn {  
+        background: linear-gradient(135deg, #ff9db4, #ffb6c1);  
+        border: none;  
+        border-radius: 25px;  
+        padding: 15px 30px;  
+        font-family: 'Comic Neue', cursive;  
+        font-size: 1.1rem;  
+        font-weight: 600;  
+        color: white;  
+        cursor: pointer;  
+        box-shadow: 0 8px 20px rgba(255, 157, 180, 0.4);  
+        transition: all 0.3s ease;  
+        margin: 10px;  
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.1);  
+    }  
+
+    .kawaii-btn:hover {  
+        transform: translateY(-3px);  
+        box-shadow: 0 12px 25px rgba(255, 157, 180, 0.6);  
+    }  
+
+    .kawaii-btn.mint {  
+        background: linear-gradient(135deg, #98fb98, #90ee90);  
+    }  
+
+    .kawaii-btn.sad {  
+        background: linear-gradient(135deg, #ffb6c1, #ffc0cb);  
+    }  
+
+    /* Button container for side-by-side buttons */  
+    .button-container {  
+        display: flex;  
+        justify-content: center;  
+        gap: 15px;  
+        flex-wrap: wrap;  
+        margin-top: 20px;  
+    }  
+
+    /* Music button */  
+    .music-btn {  
+        position: fixed;  
+        bottom: 20px;  
+        right: 20px;  
+        width: 60px;  
+        height: 60px;  
+        border-radius: 50%;  
+        background: linear-gradient(135deg, #ff9db4, #ffb6c1);  
+        border: none;  
+        font-size: 1.5rem;  
+        color: white;  
+        cursor: pointer;  
+        box-shadow: 0 8px 20px rgba(255, 157, 180, 0.4);  
+        transition: all 0.3s ease;  
+        z-index: 20;  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+    }  
+
+    .music-btn:hover {  
+        transform: scale(1.1);  
+        box-shadow: 0 12px 25px rgba(255, 157, 180, 0.6);  
+    }  
+
+    /* Love letter specific styles */  
+    .love-letter-container {  
+        max-height: 60vh;  
+        overflow-y: auto;  
+        padding: 20px;  
+        text-align: left;  
+    }  
+
+    .love-letter-title {  
+        font-family: 'Comic Neue', cursive;  
+        font-size: 1.8rem;  
+        color: #ff69b4;  
+        text-align: center;  
+        margin-bottom: 20px;  
+    }  
+
+    .love-letter-text {  
+        font-size: 1rem;  
+        line-height: 1.6;  
+        color: #333;  
+        margin-bottom: 15px;  
+    }  
+
+    /* Mobile responsiveness */  
+    @media (max-width: 600px) {  
+        .card {  
+            padding: 20px;  
+            margin: 10px;  
+        }  
+
+        .main-title {  
+            font-size: 1.8rem;  
+        }  
+
+        .main-image {  
+            width: 150px;  
+            height: 150px;  
+        }  
+
+        .button-container {  
+            flex-direction: column;  
+            align-items: center;  
+        }  
+
+        .kawaii-btn {  
+            width: 80%;  
+            max-width: 250px;  
+        }  
+    }  
+
+    /* Placeholder image styling */  
+    .placeholder-img {  
+        background: linear-gradient(135deg, #ffe0eb, #ffd1dc);  
+        display: flex;  
+        align-items: center;  
+        justify-content: center;  
+        font-size: 2rem;  
+        color: #ff69b4;  
+    }  
+</style>
+
+</head>  
+<body>  
+    <!-- Floating hearts background -->  
+    <div class="floating-hearts" id="floatingHearts"></div>  <!-- Cartoonish animated clouds -->  
+<div class="cloud cloud1">☁️</div>  
+<div class="cloud cloud2">☁️</div>  
+<div class="cloud cloud3">☁️</div>  
+  
+<!-- Cute elements in corners -->  
+<div class="cute-element cute-tl">🐼</div>  
+<div class="cute-element cute-tr">🧸</div>  
+<div class="cute-element cute-bl">🐱</div>  
+<div class="cute-element cute-br">🧸</div>  
+  
+<!-- Additional cute elements -->  
+<div class="floating-cute float1">🧸</div>  
+<div class="floating-cute float2">🐼</div>  
+<div class="floating-cute float3">🐱</div>  
+  
+<!-- Neon pink glowing hearts -->  
+<div class="neon-heart neon-heart1">💖</div>  
+<div class="neon-heart neon-heart2">💗</div>  
+<div class="neon-heart neon-heart3">💕</div>  
+
+<!-- Page 1: Main Page -->  
+<div class="page active" id="page1">  
+    <div class="card">  
+        <span class="corner-flower">🌸</span>  
+        <span class="corner-flower">🌺</span>  
+        <span class="corner-flower">🌹</span>  
+        <img src="ko4akg6dlo.jpg" alt="Cute cat with decorations" class="main-image">  
+        <div class="author-text">By: Shaurya 😋</div>  
+        <div class="main-title">HAPPY NATIONAL GIRLFRIEND DAY</div>  
+        <div class="date-text">(1 August 2025)</div>  
+        <div class="cute-text">Click the next button!! (づ｡◕‿‿◕｡)づ ♥</div>  
+        <button class="kawaii-btn" onclick="showPage('page2')">Next!! ~w~</button>  
+    </div>  
+</div>  
+
+<!-- Page 2: Envelope Page -->  
+<div class="page" id="page2">  
+    <div class="card">  
+        <span class="corner-flower">🌸</span>  
+        <span class="corner-flower">🌺</span>  
+        <span class="corner-flower">🌹</span>  
+        <img src="id3qp5nafh.png" alt="Romantic envelope with heart" class="envelope-image">  
+        <div class="cute-text" style="font-size: 1.3rem; margin: 20px 0;">Do you want to open it?</div>  
+        <div class="cute-text" style="font-size: 1.5rem; margin: 15px 0;">(╯°□°）╯</div>  
+        <div class="button-container">  
+            <button class="kawaii-btn" onclick="showPage('page4')">Open it</button>  
+            <button class="kawaii-btn mint" onclick="showPage('page3')">No ty</button>  
+        </div>  
+    </div>  
+</div>  
+
+<!-- Page 3: Sad Page -->  
+<div class="page" id="page3">  
+    <div class="card">  
+        <span class="corner-flower">🌸</span>  
+        <span class="corner-flower">🌺</span>  
+        <span class="corner-flower">🌹</span>  
+        <img src="kwe3ac99co.jpg" alt="Beautiful girlfriend photo" class="bunny-image">  
+        <div class="cute-text" style="color: #ff6b6b; font-size: 1.2rem; margin: 20px 0;">  
+            Awh... Let's try again, Please..? >﹏<  
+        </div>  
+        <button class="kawaii-btn sad" onclick="showPage('page2')">Again..?</button>  
+    </div>  
+</div>  
+
+<!-- Page 4: Love Letter Page -->  
+<div class="page" id="page4">  
+    <div class="card">  
+        <span class="corner-flower">🌸</span>  
+        <span class="corner-flower">🌺</span>  
+        <span class="corner-flower">🌹</span>  
+        <img src="tg1mmwbsgk.jpg" alt="Sad cute bunny with pink bow" class="girlfriend-image">  
+        <div class="love-letter-title">To my love ( ^ ᴗ ^ )</div>  
+        <div class="love-letter-container">  
+            <div class="love-letter-text">  
+                HAPPYYYY GIRLFRIEND DAYYYYYYY BABYYYYYYY I LOVEEE YOUUUUU SOOOOO MUCHHHHHHH 😽😽😽  
+            </div>  
+            <div class="love-letter-text">  
+                YOU'RE THE BESTEST THING THAT HAS EVER HAPPENED TO ME I SWEAR TO GOD I LOVE YOU SO MUCHH GET HOME I MISS YOU AND IM SORRYYYY SLEEPING SO MUCH HIHIHI GOTTA DREAM OF UUU 😝😝😝  
+            </div>  
+            <div class="love-letter-text">  
+                BABY TOOK LONG ENOUGH TO MAKE THIS<br>  
+                BUT STILL WORTH EVERY MINUTE IF IT MAKES YOU HAPPYYYYYY  
+            </div>  
+            <div class="love-letter-text">  
+                YOU'RE THE BESTEST GIRLFRIEND WIFEY SOULMATE WOMAN MOST PRETTYYYY SHAME WE SO FAR AWAY BUT SOMEDAY WE WILL BE TOGETHER HOLDING EACHOTHER HANDS 😡😡😡  
+            </div>  
+            <div class="love-letter-text">  
+                I'LL MAKE CHICKEN BRIYANI FOR YOU IT'S VERY POPULAR HERE 🌺😋  
+            </div>  
+            <div class="love-letter-text">  
+                HMMM LEMME WRITE A POETRY FOR YOU LIL QUICK 🍂🥀  
+            </div>  
+            <div class="love-letter-text" style="font-style: italic; text-align: center; margin: 20px 0; border-left: 4px solid #ff9db4; padding-left: 15px;">  
+                Oh—gosh, those cute dimples on your cheeks,<br>  
+                Every time you smile —looking at me.<br>  
+                Oh my dear, I dream of you every time I fall asleep.<br>  
+                I hold you dearly in my dreams,<br>  
+                Every time I see you smile—looking at me,<br>  
+                With those cute dimples on your cheeks..  
+            </div>  
+            <div class="love-letter-text">  
+                BEEN SO WHILE SINCE I WROTE A POETRYY 😽  
+            </div>  
+            <div class="love-letter-text">  
+                I LOVE YOU SO MUCH BABYYYYYYY 😝😝😝<br>  
+                ONCE AGAIN HAPPY GIRLFRIEND DAYYYYYYY TO THE BEST GIRLFRIEND EVERRRRRRRRRR  
+            </div>  
+            <div class="love-letter-text" style="text-align: right; margin-top: 30px; font-size: 1.2rem; font-weight: 600;">  
+                -Your hubby 💞  
+            </div>  
+            <div class="love-letter-text" style="text-align: center; margin-top: 15px; font-size: 1.5rem;">  
+                💞🫶🏻  
+            </div>  
+        </div>  
+    </div>  
+</div>  
+
+<!-- Music Button -->  
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()">🔊</button>  
+
+<!-- Audio element with uploaded music -->  
+<audio id="music" autoplay loop>
+  <source src="cutecatthis-20250731-0001.mp3"  type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>  
+
+<script>  
+    // Page navigation  
+    function showPage(pageId) {  
+        // Hide all pages  
+        const pages = document.querySelectorAll('.page');  
+        pages.forEach(page => {  
+            page.classList.remove('active');  
+        });  
+          
+        // Show selected page  
+        document.getElementById(pageId).classList.add('active');  
+          
+        // Auto-enable music on page 4  
+        if (pageId === 'page4') {  
+            const music = document.getElementById('backgroundMusic');  
+            if (music.src) {  
+                music.play().catch(e => console.log('Music autoplay prevented by browser'));  
+            }  
+        }  
+    }  
+
+    // Music toggle  
+    let musicPlaying = false;  
+    function toggleMusic() {  
+        const music = document.getElementById('backgroundMusic');  
+        const musicBtn = document.getElementById('musicBtn');  
+          
+        if (!music.src) {  
+            alert('Music will be available once you add the MP3 link! 🎵');  
+            return;  
+        }  
+          
+        if (musicPlaying) {  
+            music.pause();  
+            musicBtn.textContent = '🔊';  
+            musicPlaying = false;  
+        } else {  
+            music.play().catch(e => {  
+                alert('Please interact with the page first to enable music 🎵');  
+            });  
+            musicBtn.textContent = '🔇';  
+            musicPlaying = true;  
+        }  
+    }  
+
+    // Create floating hearts  
+    function createFloatingHeart() {  
+        const heart = document.createElement('div');  
+        heart.className = 'heart';  
+        heart.textContent = '💕';  
+        heart.style.left = Math.random() * 100 + 'vw';  
+        heart.style.animationDelay = Math.random() * 6 + 's';  
+        heart.style.animationDuration = (Math.random() * 3 + 6) + 's';  
+          
+        document.getElementById('floatingHearts').appendChild(heart);  
+          
+        // Remove heart after animation  
+        setTimeout(() => {  
+            if (heart.parentNode) {  
+                heart.parentNode.removeChild(heart);  
+            }  
+        }, 9000);  
+    }  
+
+    // Create hearts periodically  
+    setInterval(createFloatingHeart, 2000);  
+      
+    // Create initial hearts  
+    for (let i = 0; i < 5; i++) {  
+        setTimeout(createFloatingHeart, i * 400);  
+    }  
+
+        // Add some random heart variations  
+    const heartTypes = ['💕', '💖', '💗', '💓', '💘'];  
+    function createFloatingHeart() {  
+        const heart = document.createElement('div');  
+        heart.className = 'heart';  
+        heart.textContent = heartTypes[Math.floor(Math.random() * heartTypes.length)];  
+        heart.style.left = Math.random() * 100 + 'vw';  
+        heart.style.animationDelay = Math.random() * 6 + 's';  
+        heart.style.animationDuration = (Math.random() * 3 + 6) + 's';  
+          
+        document.getElementById('floatingHearts').appendChild(heart);  
+          
+        setTimeout(() => {  
+            if (heart.parentNode) {  
+                heart.parentNode.removeChild(heart);  
+            }  
+        }, 9000);  
+    }  
+</script>
+</body>  
+</html>   
