@@ -380,31 +380,7 @@
         margin-top: 20px;  
     }  
 
-    /* Music button */  
-    .music-btn {  
-        position: fixed;  
-        bottom: 20px;  
-        right: 20px;  
-        width: 60px;  
-        height: 60px;  
-        border-radius: 50%;  
-        background: linear-gradient(135deg, #ff9db4, #ffb6c1);  
-        border: none;  
-        font-size: 1.5rem;  
-        color: white;  
-        cursor: pointer;  
-        box-shadow: 0 8px 20px rgba(255, 157, 180, 0.4);  
-        transition: all 0.3s ease;  
-        z-index: 20;  
-        display: flex;  
-        align-items: center;  
-        justify-content: center;  
-    }  
-
-    .music-btn:hover {  
-        transform: scale(1.1);  
-        box-shadow: 0 12px 25px rgba(255, 157, 180, 0.6);  
-    }  
+    
 
     /* Love letter specific styles */  
     .love-letter-container {  
@@ -512,7 +488,7 @@
         <span class="corner-flower">🌸</span>  
         <span class="corner-flower">🌺</span>  
         <span class="corner-flower">🌹</span>  
-        <img src="id3qp5nafh.png" alt="Romantic envelope with heart" class="envelope-image">  
+        <img src="id3qp5nafh.jpg" alt="the book" class="envelope-image">  
         <div class="cute-text" style="font-size: 1.3rem; margin: 20px 0;">Do you want to open it?</div>  
         <div class="cute-text" style="font-size: 1.5rem; margin: 15px 0;">(╯°□°）╯</div>  
         <div class="button-container">  
@@ -785,7 +761,36 @@
 </div>
 
 <!-- Music Button -->  
-<audio id="bg-audio" src="music.mp3" loop preload="auto" style="display:none;"></audio>
+<audio id="bg-audio" src="music.mp3" loop="true" preload="auto" style="display:none;"></audio>
+
+<script>
+  (function() {
+    function startMusicEngine() {
+      const audio = document.getElementById('bg-audio');
+      if (audio) {
+        audio.muted = false; // Kill any mute defaults
+        audio.loop = true;   // Force it to repeat forever
+        audio.volume = 1.0;  // Full volume
+        
+        audio.play()
+          .then(() => {
+            console.log("Looping music started!");
+            // Remove listeners immediately so it doesn't try to restart on later clicks
+            window.removeEventListener('touchstart', startMusicEngine);
+            window.removeEventListener('click', startMusicEngine);
+          })
+          .catch((err) => {
+            console.log("Waiting for a clean screen touch:", err);
+          });
+      }
+    }
+
+    // Listens for the absolute first touch on mobile or desktop
+    window.addEventListener('touchstart', startMusicEngine, { passive: true });
+    window.addEventListener('click', startMusicEngine);
+  })();
+</script>
+        
         
         
 <script>  
@@ -798,40 +803,9 @@
         });  
           
         // Show selected page  
-        document.getElementById(pageId).classList.add('active');  
-          
-        // Auto-enable music on page 4  
-        if (pageId === 'page4') {  
-            const music = document.getElementById('backgroundMusic');  
-            if (music.src) {  
-                music.play().catch(e => console.log('Music autoplay prevented by browser'));  
-            }  
-        }  
-    }  
+        document.getElementById(pageId).classList.add('active');   
 
-    // Music toggle  
-    let musicPlaying = false;  
-    function toggleMusic() {  
-        const music = document.getElementById('backgroundMusic');  
-        const musicBtn = document.getElementById('musicBtn');  
-          
-        if (!music.src) {  
-            alert('Music will be available once you add the MP3 link! 🎵');  
-            return;  
-        }  
-          
-        if (musicPlaying) {  
-            music.pause();  
-            musicBtn.textContent = '🔊';  
-            musicPlaying = false;  
-        } else {  
-            music.play().catch(e => {  
-                alert('Please interact with the page first to enable music 🎵');  
-            });  
-            musicBtn.textContent = '🔇';  
-            musicPlaying = true;  
-        }  
-    }  
+         
 
     // Create floating hearts  
     function createFloatingHeart() {  
